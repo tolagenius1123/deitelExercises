@@ -1,12 +1,12 @@
 package Chapter6;
 
-import java.security.SecureRandom;
+import java.util.Random;
 import java.util.Scanner;
 
 public class MathQuizGame {
     public static void main(String[] args) {
 
-        SecureRandom randomNumbers = new SecureRandom();
+        Random randomNumbers = new Random();
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("**MATH QUIZ GAME**");
@@ -17,37 +17,78 @@ public class MathQuizGame {
         int num2;
         int userAnswer;
         int correctAnswer;
-        int maxloop =10;
         int score = 0;
-        double percentage;
+        //double percentage;
+        char operatorSwitch = ' ';
+        int fail = 0;
+
+        for (int counter = 1; counter <=10; counter ++){
+            num1 = randomNumbers.nextInt(1,11);
+            num2 = randomNumbers.nextInt(1,11);
+            int operator = randomNumbers.nextInt(1,5);
 
 
-        for (int counter = 1; counter <= maxloop; counter ++){
-            num1 = randomNumbers.nextInt(10);
-            num2 = randomNumbers.nextInt(10);
+            switch (operator) {
+                case 1: operatorSwitch = '+';
+                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
+                    userAnswer = keyboard.nextInt();
+                        correctAnswer = num1 + num2;
+                    if(userAnswer == correctAnswer) {
+                        System.out.println(">> Correct!");
+                        score++;
+                    }
+                    else {
+                        System.out.println(">> Wrong! Try again ");
+                        fail++;
+                    }
+                        break;
+                case 2: operatorSwitch= '-';
+                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
+                    userAnswer = keyboard.nextInt();
+                        correctAnswer = num1 - num2;
+                    if(userAnswer == correctAnswer) {
+                        System.out.println(">> Correct!");
+                        score++;
+                    }
+                    else {
+                        System.out.println(">> Wrong! Try again ");
+                        fail++;
+                    }
+                        break;
+                case 3: operatorSwitch= '*';
+                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
+                    userAnswer = keyboard.nextInt();
+                        correctAnswer = num1 * num2;
+                    if(userAnswer == correctAnswer) {
+                        System.out.println(">> Correct!");
+                        score++;
+                    }
+                    else {
+                        System.out.println(">> Wrong! Try again ");
+                        fail++;
+                    }
+                        break;
+                case 4: operatorSwitch= '/';
+                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
+                    userAnswer = keyboard.nextInt();
+                        correctAnswer = num1 / num2;
+                    if(userAnswer == correctAnswer) {
+                        System.out.println(">> Correct!");
+                        score++;
+                    }
+                    else {
+                        System.out.println(">> Wrong! Try again ");
+                        fail++;
+                    }
+                        break;
 
-            System.out.print(counter+ ". " +num1+ " x " +num2+ " = ");
-            userAnswer = keyboard.nextInt();
-            correctAnswer = num1 * num2;
+            }
 
-            if(userAnswer == correctAnswer) {
-                System.out.println(">> Correct!");
-                score++;
-                }
-                else {
-                    System.out.println(">> Wrong! Try again ");
-                }
-
-        } //End of loop
+        }
 
             System.out.println("==================");
-            System.out.print("You scored " +score+ "/" +maxloop+ " = ");
-
-            percentage = (double)score / (double)maxloop * 100;
-            System.out.println(percentage+ " %");
-
-
-
+            System.out.println("You got "+score+ " correct answers");
+            System.out.println("You answered "+fail+ " questions wrongly");
 
 
     }
