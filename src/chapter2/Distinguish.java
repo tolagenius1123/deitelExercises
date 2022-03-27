@@ -3,6 +3,7 @@ package chapter2;
 import java.util.Scanner;
 
 public class Distinguish {
+
    public static void main(String[] args){
    Scanner input = new Scanner(System.in);
    
@@ -13,8 +14,9 @@ public class Distinguish {
    int number2 = input.nextInt();
 
    if (number1 > number2){
-   System.out.printf("%d > %d%n", number1, number2);
+      System.out.printf("%d > %d%n", number1, number2);
    }
+
    }
 }
 

@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class MyCode {
     public static void main(String[] args){
-        Scanner name1 = new Scanner(System.in);
+
+        Scanner yourName = new Scanner(System.in);
 
         System.out.println("Hello! What is your name: ");
-        String name =  name1.nextLine();
+        String name =  yourName.nextLine();
+
         System.out.println(name+ " you are welcome!");
 
 
