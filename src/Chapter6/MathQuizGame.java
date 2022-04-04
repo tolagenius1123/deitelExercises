@@ -4,23 +4,20 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MathQuizGame {
+    public static int userAnswer;
+    public static int correctAnswer;
+    public static int score = 0;
+    public static int fail = 0;
+
     public static void main(String[] args) {
 
         Random randomNumbers = new Random();
-        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("**MATH QUIZ GAME**");
         System.out.println("==================");
 
-        // Variables declaration
         int num1;
         int num2;
-        int userAnswer;
-        int correctAnswer;
-        int score = 0;
-        //double percentage;
-        char operatorSwitch = ' ';
-        int fail = 0;
 
         for (int counter = 1; counter <=10; counter ++){
             num1 = randomNumbers.nextInt(1,11);
@@ -29,68 +26,54 @@ public class MathQuizGame {
 
 
             switch (operator) {
-                case 1: operatorSwitch = '+';
-                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
-                    userAnswer = keyboard.nextInt();
-                        correctAnswer = num1 + num2;
-                    if(userAnswer == correctAnswer) {
-                        System.out.println(">> Correct!");
-                        score++;
-                    }
-                    else {
-                        System.out.println(">> Wrong! Try again ");
-                        fail++;
-                    }
+                case 1: operatorSwitch(num1,num2,'+',counter);
                         break;
-                case 2: operatorSwitch= '-';
-                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
-                    userAnswer = keyboard.nextInt();
-                        correctAnswer = num1 - num2;
-                    if(userAnswer == correctAnswer) {
-                        System.out.println(">> Correct!");
-                        score++;
-                    }
-                    else {
-                        System.out.println(">> Wrong! Try again ");
-                        fail++;
-                    }
+                case 2:
+                    operatorSwitch(num1,num2,'-',counter);
                         break;
-                case 3: operatorSwitch= '*';
-                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
-                    userAnswer = keyboard.nextInt();
-                        correctAnswer = num1 * num2;
-                    if(userAnswer == correctAnswer) {
-                        System.out.println(">> Correct!");
-                        score++;
-                    }
-                    else {
-                        System.out.println(">> Wrong! Try again ");
-                        fail++;
-                    }
+                case 3:
+                    operatorSwitch(num1,num2,'*',counter);
                         break;
-                case 4: operatorSwitch= '/';
-                    System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
-                    userAnswer = keyboard.nextInt();
-                        correctAnswer = num1 / num2;
-                    if(userAnswer == correctAnswer) {
-                        System.out.println(">> Correct!");
-                        score++;
-                    }
-                    else {
-                        System.out.println(">> Wrong! Try again ");
-                        fail++;
-                    }
+                case 4:
+                    operatorSwitch(num1,num2,'/',counter);
                         break;
-
             }
+        }
+        showResult();
+
+    }
+
+
+
+    public static void showResult(){
+        System.out.println("==================");
+        System.out.println("You got "+score+ " correct answers");
+        System.out.println("You answered "+fail+ " questions wrongly");
+    }
+
+
+
+    public static void operatorSwitch(int num1, int num2, char operatorSwitch,int counter){
+        System.out.print(counter+ ". " +num1+ " "+operatorSwitch+ " " +num2+ " = ");
+        Scanner keyboard = new Scanner(System.in);
+        userAnswer = keyboard.nextInt();
+        {if (operatorSwitch == '+'){
+        correctAnswer = num1 + num2;}
+        else if (operatorSwitch == '*'){
+            correctAnswer = num1 * num2;}
+        else if (operatorSwitch == '/'){
+            correctAnswer = num1 / num2;}
+        else if (operatorSwitch == '-'){
+            correctAnswer = num1 - num2;}}
+        if(userAnswer == correctAnswer) {
+            System.out.println(">> Correct!");
+            score++;
+        }
+        else {
+            System.out.println(">> Wrong! Try again ");
+            fail++;
 
         }
-
-            System.out.println("==================");
-            System.out.println("You got "+score+ " correct answers");
-            System.out.println("You answered "+fail+ " questions wrongly");
-
-
     }
 }
 
