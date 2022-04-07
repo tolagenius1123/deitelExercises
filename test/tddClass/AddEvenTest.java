@@ -6,10 +6,11 @@ public class AddEvenTest {
     //loops
     @Test
     public void AddEven() {
+
         int number = 2;
         while (number <= 100) {
             System.out.print(number + " ");
-            number = number + 2;
+            number += 2;
 
         }
     }

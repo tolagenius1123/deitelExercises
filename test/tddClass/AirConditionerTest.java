@@ -2,10 +2,10 @@ package tddClass;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class AirConditionerTest1 {
+
+public class AirConditionerTest {
 
     @Test
     public void turnON(){
@@ -14,55 +14,74 @@ public class AirConditionerTest1 {
     //when
     cooler.setOn(true);
     //assert
-        assertEquals(true,cooler.getOn());
+        assertTrue(cooler.getOn());
     }
+
     @Test
     public void turnOff(){
     //given
     AirConditioner cooler = new AirConditioner();
+
     //when
     cooler.setOff(false);
+
     //assert
-    assertEquals(false,cooler.getOff());
+        assertFalse(cooler.getOff());
+
     }
+
     @Test
     public void increaseTemp(){
     //given
     AirConditioner cooler = new AirConditioner();
-    //cooler.addTemp(22);
+
     //when
-    cooler.addTemp(23);
-    cooler.getTemperature();
+    cooler.addTemp(1);
+
     //assert
-    assertEquals(23,cooler.getTemperature());
+    assertEquals(17,cooler.getTemperature());
 
     }
     @Test
     public void decreaseTemp(){
     //given
     AirConditioner cooler = new AirConditioner();
-    cooler.addTemp(25);
+    cooler.addTemp(2);
+
     //when
-    cooler.reduceTemp(24);
+    cooler.reduceTemp(1);
+
     //assert
-    assertEquals(24, cooler.getTemperature());
-    }
-    @Test
-    public void maxTemp(){
-    //given
-        AirConditioner cooler = new AirConditioner();
-    //when
-    cooler.maxTemp();
-    cooler.getTemperature();
-    assertEquals(16,cooler.getTemperature());
+    assertEquals(17, cooler.getTemperature());
 
     }
+
+    @Test
+    public void maxTemp(){
+
+    //given
+    AirConditioner cooler = new AirConditioner();
+
+    //when
+    cooler.addTemp(14);
+    cooler.maxTemp();
+
+    //assert
+    assertEquals(30,cooler.getTemperature());
+
+    }
+
     @Test
     public void minTemp(){
-    //given
-        AirConditioner cooler = new AirConditioner();
-    //when
+
+    //GIVEN
+    AirConditioner cooler = new AirConditioner();
+
+    //WHEN
     cooler.minTemp();
+
+    //ASSERT
+    assertEquals(16, cooler.getTemperature());
 
 
     }

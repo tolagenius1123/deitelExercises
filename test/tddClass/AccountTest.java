@@ -15,6 +15,7 @@ public class AccountTest {
     //assert
     assertEquals(10000, tola.getBalance());
     }
+
     @Test
     public void withdrawalTest(){
     //given
