@@ -18,7 +18,7 @@ public class ArrayArithmetic {
 
     public static void displayArray(){
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < number.length; i++){
             System.out.print(number[i]+ " ");
         }
     }
@@ -31,6 +31,7 @@ public class ArrayArithmetic {
             if (max < number[i]) {
                 max = number[i];
             }
+
         }
         System.out.println("The Largest no is "+max);
 

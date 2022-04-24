@@ -8,6 +8,7 @@ public class CrapGame {
 
         System.out.println(".:WELCOME TO CRAP GAME:.");
         System.out.println("========================");
+
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Press Any Number to Roll a Dice: ");
@@ -39,14 +40,15 @@ public class CrapGame {
             System.out.println(dice1 + " + " + dice2 + " = " + point);
 
 
-        if (point == 7){
-            System.out.println("You Loose");
-        }
-        if (point == sumOfDice ){
+
+            if (point == sumOfDice ){
                 System.out.println("You Win!");
             }
+            else if (point == 7){
+                System.out.println("You Loose!");
+            }
         else {
-//                int count = 1;
+//
                 while(point != sumOfDice){
                     dice1 = random.nextInt(1, 7);
                     dice2 = random.nextInt(1, 7);
@@ -64,12 +66,3 @@ public class CrapGame {
 }
 
 }
-
-
-
-
-
-
-
-
-

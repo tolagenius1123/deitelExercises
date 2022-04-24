@@ -16,7 +16,7 @@ public class BitFlipperApp {
             else if (digit == 1){
                 System.out.println("0");
                 }
-                else if (digit != 1 && digit !=0){
+                else {
                     System.out.println("Invalid digit");
                     }
 
