@@ -29,7 +29,7 @@ public class NokiaMobile{
         int nokiaMobile = nokiaKeypad.nextInt();
 
         switch (nokiaMobile) {
-            case 1:
+            case 1 -> {
                 System.out.println("""
                         Phone book:
                         1.  Search
@@ -42,20 +42,17 @@ public class NokiaMobile{
                         8.  Options
                         9.  Speed dials
                         10. Voice tags""");
-
                 int options = nokiaKeypad.nextInt();
-                switch (options) {
-                    case 8:
-                        System.out.println("""
-                                1. Type of view
-                                2. Memory status
-                                """);
-                        break;
-
+                if (options == 8) {
+                    System.out.println("""
+                            1. Type of view
+                            2. Memory status
+                            """);
                 }
+            }
         }
         switch (nokiaMobile) {
-            case 2:
+            case 2 -> {
                 System.out.println("""
                         Messages:
                         1.  Write messages
@@ -69,79 +66,71 @@ public class NokiaMobile{
                         9.  Voice mailbox number
                         10. Service command editor
                         """);
-
                 int messageSettings = nokiaKeypad.nextInt();
-                switch (messageSettings) {
-                    case 7:
-                        System.out.println("""
-                                1. Set
-                                2. Common
+                if (messageSettings == 7) {
+                    System.out.println("""
+                            1. Set
+                            2. Common
+                            """);
+                    int set = nokiaKeypad.nextInt();
+                    switch (set) {
+                        case 1 -> System.out.println("""
+                                1. Message center number
+                                2. Message sent as
+                                3. Message validity
                                 """);
-                        int set = nokiaKeypad.nextInt();
-                        switch (set) {
-                            case 1:
-                                System.out.println("""
-                                        1. Message center number
-                                        2. Message sent as
-                                        3. Message validity
-                                        """);
-                                break;
-
-
-                            case 2:
-                                System.out.println("""
-                                        1. Delivery reports
-                                        2. Reply via same centre
-                                        3. Character support
-                                        """);
-                                break;
-                        }
+                        case 2 -> System.out.println("""
+                                1. Delivery reports
+                                2. Reply via same centre
+                                3. Character support
+                                """);
+                    }
                 }
+            }
         }
 
 
-            switch (nokiaMobile) {
-                case  4:
-                    System.out.println("""
-                            1. Missed calls
-                            2. Received calls
-                            3. Dialled numbers
-                            4. Erase recent call lists
-                            5. Show call duration 
-                            6. Show call costs
-                            7. Call cost settings
-                            8. Prepaid credit""");
-
-                    int showCallDuration = nokiaKeypad.nextInt();
-                    switch(showCallDuration) {
-                        case 5:
-                            System.out.println("""
-                                    1. Last call duration
-                                    2. All calls' duration
-                                    3. Received calls' duration
-                                    4. Dialled calls' duration
-                                    5. Clear timers""");
-                            break;
-
-
-                        case 6:
-                            System.out.println("""
-                                    1. Last call cost
-                                    2. All calls' cost
-                                    3. Clear counters
-                                    """);
-                            break;
+        switch (nokiaMobile) {
+            case 4 -> {
+                System.out.println("""
+                        1. Missed calls
+                        2. Received calls
+                        3. Dialled numbers
+                        4. Erase recent call lists
+                        5. Show call duration 
+                        6. Show call costs
+                        7. Call cost settings
+                        8. Prepaid credit""");
+                int showCallDuration = nokiaKeypad.nextInt();
+                switch (showCallDuration) {
+                    case 5:
+                        System.out.println("""
+                                1. Last call duration
+                                2. All calls' duration
+                                3. Received calls' duration
+                                4. Dialled calls' duration
+                                5. Clear timers""");
+                        break;
 
 
-                        case 7:
-                            System.out.println("""
-                                    1. Call cost limit
-                                    2. Show cost in
-                                    """);
-                            break;
-                    }
+                    case 6:
+                        System.out.println("""
+                                1. Last call cost
+                                2. All calls' cost
+                                3. Clear counters
+                                """);
+                        break;
 
+
+                    case 7:
+                        System.out.println("""
+                                1. Call cost limit
+                                2. Show cost in
+                                """);
+                        break;
                 }
+            }
+        }
 
                 switch(nokiaMobile) {
                     case 5:

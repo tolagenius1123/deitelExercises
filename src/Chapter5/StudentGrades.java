@@ -21,23 +21,11 @@ public class StudentGrades {
             String grade = input.nextLine();     //toUpperCase();
 
 
-            switch (grade){
-                case "A":
-                    aCounter++;
-                    break;
-
-                case "B":
-                    bCounter++;
-                    break;
-
-                case "C":
-                    cCounter++;
-                    break;
-
-                case "D":
-                    dCounter++;
-                    break;
-
+            switch (grade) {
+                case "A" -> aCounter++;
+                case "B" -> bCounter++;
+                case "C" -> cCounter++;
+                case "D" -> dCounter++;
             }
 
 

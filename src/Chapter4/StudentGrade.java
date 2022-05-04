@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class StudentGrade {
 
     public static double studentScore;
-    public static  String studentName;
+    public static String studentName;
 
 
     public static void main(String[] args) {

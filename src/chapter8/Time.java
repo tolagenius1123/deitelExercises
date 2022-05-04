@@ -45,5 +45,9 @@ public class Time {
         if (secondIsInvalid) throw new IllegalArgumentException("Invalid seconds");
     }
 
+    public void displayTime(){
+        System.out.println("The current time is "+hour+":"+minute+":"+second);
+    }
+
 
 }

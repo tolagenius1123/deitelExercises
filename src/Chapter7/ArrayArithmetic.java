@@ -2,7 +2,7 @@ package Chapter7;
 
 public class ArrayArithmetic {
     public static int[] number = {2, 4, 6, 8, 10, 1, 3, 5, 7, 9};
-    public static double sumOfArray;
+    public static double sumOfArray = 0;
 
 
 
@@ -18,8 +18,8 @@ public class ArrayArithmetic {
 
     public static void displayArray(){
 
-        for(int i = 0; i < number.length; i++){
-            System.out.print(number[i]+ " ");
+        for (int j : number) {
+            System.out.print(j + " ");
         }
     }
 
@@ -27,9 +27,9 @@ public class ArrayArithmetic {
 
         System.out.println();
         int max = 0;
-        for(int i = 0; i < number.length; i++){
-            if (max < number[i]) {
-                max = number[i];
+        for (int j : number) {
+            if (max < j) {
+                max = j;
             }
 
         }
@@ -38,7 +38,12 @@ public class ArrayArithmetic {
     }
 
     public static void sumOfArray(){
-        sumOfArray = number[0]+number[1]+number[2]+number[3]+number[4]+number[5]+number[6]+number[7]+number[8]+number[9];
+
+        for (int j : number) {
+            sumOfArray += j;
+
+        }
+
         System.out.println("The sum of the array = "+sumOfArray);
 
     }
@@ -46,8 +51,4 @@ public class ArrayArithmetic {
     public static void averageNoOfArray(){
         System.out.println("The average of the array is "+(sumOfArray/ number.length));
     }
-
-
-
-
 }
