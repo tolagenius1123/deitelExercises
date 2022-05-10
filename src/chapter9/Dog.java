@@ -13,8 +13,13 @@ public class Dog extends Pet {
 
     }
 
-    public void fetch() {
-        System.out.println("Yes Master, I'll fetch");
+    public String fetch() {
+        return "Yes Master, I'll fetch";
+    }
+
+    public String speak() {
+
+        return "Woof Woof";
     }
 
 

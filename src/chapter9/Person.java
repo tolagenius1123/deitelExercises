@@ -1,27 +1,17 @@
 package chapter9;
 
 public class Person {
-    String name;
-    Pet myPet;
 
-    public String getName() {
-        return name;
+    private final Job aJob;
+
+    public Person(Job aJob){
+        this.aJob = new Job();
+        aJob.setRole("Manager");
     }
+            //aJob.setRole("Manager");
 
-    public Pet getMyPet() {
-        return myPet;
-    }
 
-    public void setMyPet(Pet myPet) {
-        this.myPet = myPet;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Person(String name){
-        this.name = name;
-
+    public String getResult(){
+        return aJob.getRole();
     }
 }

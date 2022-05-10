@@ -9,9 +9,9 @@ public class Cat extends Pet {
         System.out.println(myCat.getName() + " says: ");
         System.out.println(myCat.speak());
     }
-//    Method speak automatically overrides the method speak in Super class Pet and as such chooses its own behaviour despite inheriting the behaviours of the Super class.
-//    public String speak() {
-//
-//        return "I only speak only when I want to";
-//   }
+    //Method speak automatically overrides the method speak in Super class Pet
+    public String speak() {
+
+        return "Meow Meow";
+   }
 }
