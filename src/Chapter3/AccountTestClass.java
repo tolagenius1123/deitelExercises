@@ -17,10 +17,6 @@ public class AccountTestClass {
         myAccount.setName(theName);
         System.out.println("Name in object myAccount is: " +myAccount.getName());
 
-        /*AccountClass accountClass1 = new AccountClass("Jane Green");
-        AccountClass accountClass2 = new AccountClass("Omotola");
 
-        System.out.println("AccountClass1 name is "+accountClass1.getName());
-        System.out.println("AccountClass2 name is "+accountClass2.getName());*/
     }
 }

@@ -200,7 +200,7 @@ public class NokiaMobile{
                                     3. Date settings
                                     4. Stop watch
                                     5. Countdown timer
-                                    6. Auto update of date and time 
+                                    6. Auto update of date and time
                                     """);
                     }
     }

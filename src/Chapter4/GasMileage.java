@@ -27,6 +27,7 @@ public class GasMileage {
             for (int i = 0; i < userInput; i++) {
                 System.out.print("Enter miles driven for trip " + (i + 1) + ": ");
                 milesDriven = input.nextInt();
+
                 System.out.print("Enter gallons used for trip " + (i + 1) + ": ");
                 gallonsUsed = input.nextInt();
                 milesPerGallon = (double) milesDriven / gallonsUsed;

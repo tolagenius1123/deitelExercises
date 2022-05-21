@@ -5,17 +5,6 @@ import java.util.Scanner;
 public class CarApp {
     public static void main(String[] args) {
 
-        /*Scanner keyboard = new Scanner(System.in);
-
-        Car myCar = new Car("Null", " ", 0.0);
-        System.out.println("Initial model of your car is: " +myCar.getModel());
-
-        System.out.println("Enter a model: ");
-        String theModel = keyboard.nextLine();
-
-        myCar.setModel(theModel);
-        System.out.println("The model of your car is: "+myCar.getModel());*/
-
         Car myCar1 = new Car("","",0);
         Car myCar2 = new Car("","",0);
 
